@@ -28,7 +28,6 @@ class JornalistaController extends Controller
             $jornalista->save();
 
             return ['sucess' => true];
-
         }
         catch(\Exception $error){
                 return ['error' => $error];
