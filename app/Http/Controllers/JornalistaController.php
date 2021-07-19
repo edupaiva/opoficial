@@ -24,10 +24,10 @@ class JornalistaController extends Controller
             $jornalista->nome = $request->nome;
             $jornalista->sobrenome = $request->sobrenome;
             $jornalista->email = $request->email;
-            $jornalista->senha = $request->senha;
+            $jornalista->senha = md5($request->senha);
             $jornalista->save();
 
-            return ['sucess' => true];
+            return redirect('/login')->withInput();
         }
         catch(\Exception $error){
                 return ['error' => $error];
