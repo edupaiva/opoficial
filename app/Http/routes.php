@@ -28,10 +28,10 @@ Route::post('/adiciona', 'JornalistaController@adiciona');
 Route::post('/me', 'JornalistaController@ficha');
 
 //Rotas class Noticias
-Route::post('/api/newa/create', 'NoticiaController@registrar');
-Route::put('/api/newa/update/{news_id}', 'NoticiaController@update');
+Route::post('/api/news/create', 'NoticiaController@registrar');
+Route::put('/api/news/update/{news_id}', 'NoticiaController@update');
 Route::delete('/api/news/delete/{news_id}', 'NoticiaController@delete');
-Route::get('/api/news/me', 'NoticiaController@show');
+Route::get('/news/me', 'NoticiaController@show');
 Route::get('/api/news/type/{type_id}', 'NoticiaController@type');
 
 //Rotas class TipoNoticias
