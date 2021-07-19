@@ -25,12 +25,7 @@ Route::get('/', function () {
 Route::get('/register', 'JornalistaController@registrar');
 Route::get('/login', 'JornalistaController@login');
 Route::post('/adiciona', 'JornalistaController@adiciona');
-
-
-/*Route::post('/api/me', 'JornalistaController@ficha');
-
-
-
+Route::post('/me', 'JornalistaController@ficha');
 
 //Rotas class Noticias
 Route::post('/api/newa/create', 'NoticiaController@registrar');
