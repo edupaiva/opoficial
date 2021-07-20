@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Noticia extends Model
 {
-    protected $table = 'noticias' ; 
+    //protected $table = 'noticias' ; 
     public $timestamps = false ;
-    protected $fillable = array ( 'jornalista' , 'classificacao');
+    //protected $fillable = array ( 'jornalista_id' , 'tiponoticia_id','titulo','descricao', 'corponoticia','imagemdestaque' );
 
-    protected $guarded = ['id'];
+    //protected $guarded = ['id'];
+
 }

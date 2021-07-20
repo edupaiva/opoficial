@@ -14,4 +14,10 @@ class NoticiaController extends Controller
         $noticias = Noticia::all();
         return view('noticia.listagem')->with('noticias', $noticias);
     }
+
+    public function apishow(){
+        $noticias = Noticia::all();
+        return response()->json($noticias);
+    }
+
 }
