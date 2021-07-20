@@ -20,7 +20,7 @@
     <td> {{$n->descricao}} </td>
   
 
-    <td><a href="/estoque/public/produtos/mostra/<?php echo $n->id; ?>"><span class="glyphicon glyphicon-search"></span></a></td>
+    <td><a href="/produtos/mostra/<?php echo $n->id; ?>"><span class="glyphicon glyphicon-search"></span></a></td>
     </tr>
     @endforeach
     </table>
