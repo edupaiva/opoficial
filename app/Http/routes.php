@@ -27,6 +27,11 @@ Route::get('/login', 'JornalistaController@login');
 Route::post('/adiciona', 'JornalistaController@adiciona');
 Route::post('/me', 'JornalistaController@ficha');
 
+//Rotas para o API Jornalista
+Route::post('/api/login', 'JornalistaController@apilogin');
+Route::post('/api/register', 'JornalistaController@apiadiciona');
+Route::post('/api/me', 'JornalistaController@apificha');
+
 //Rotas class Noticias
 Route::post('/api/news/create', 'NoticiaController@registrar');
 Route::put('/api/news/update/{news_id}', 'NoticiaController@update');

@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jornalista extends Model
 {
-    public $timestamps =false;
+    protected $table = 'jornalistas' ; 
+    public $timestamps = false ;
+    protected $fillable = array ( 'nome' , 'sobrenome' , 'email' , 'senha' );
+
+    protected $guarded = ['id'];
+    
 }
