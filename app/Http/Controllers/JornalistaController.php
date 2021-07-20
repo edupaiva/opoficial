@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
-//use Request;
-use App\Http\Requests;
+use Request;
+//use App\Http\Requests;
 use App\Http\Requests\Request as RequestsRequest;
 use App\Jornalista;
 use Error;
@@ -17,27 +17,23 @@ class JornalistaController extends Controller
        return view('jornalista.formulario');
     }
 
-
-    public function adiciona(Request $request){
+    public function adiciona(){
         try{
-            $jornalista = new Jornalista();
-            $jornalista->nome = $request->nome;
-            $jornalista->sobrenome = $request->sobrenome;
-            $jornalista->email = $request->email;
-            $jornalista->senha = md5($request->senha);
-            $jornalista->save();
-
-            return redirect('/login')->withInput();
+            Jornalista::create(Request::all());
+            
+            return redirect()
+                ->action('JornalistaController@login')
+                ->withInput();
         }
         catch(\Exception $error){
                 return ['error' => $error];
         }
-
     }
 
     public function login(){
         return view('jornalista.login');
     }
+    
     public function ficha(){
         return view('jornalista.ficha');
     }
