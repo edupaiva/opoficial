@@ -40,15 +40,21 @@ Route::put('/type/update/{type_id}', 'JornalistaController@update');
 Route::delete('/type/delete/{type_id}', 'JornalistaController@delete');
 Route::get('/type/me', 'JornalistaController@show');
 
-
+//=========================================================================
 //Rotas para o API Jornalista
-Route::post('/api/login', 'JornalistaController@apilogin');
-Route::post('/api/register', 'JornalistaController@apiadiciona');
-Route::post('/api/me', 'JornalistaController@apificha');
+Route::post('api/login', 'api\JornalistaController@login');
+Route::post('api/register', 'api\JornalistaController@save');
+Route::get('api/me/{id}', 'api\JornalistaController@me');
 
-//Rotas class Noticias
-Route::post('/api/news/create', 'NoticiaController@registrar');
-Route::put('/api/news/update/{news_id}', 'NoticiaController@update');
-Route::delete('/api/news/delete/{news_id}', 'NoticiaController@delete');
-Route::get('api/news/me', 'NoticiaController@apishow');
-Route::get('/api/news/type/{type_id}', 'NoticiaController@type');
+//Rotas class API Noticias
+Route::post('api/news/create', 'api\NoticiaController@save');
+Route::put('api/news/update/{news_id}', 'api\NoticiaController@update');
+Route::delete('api/news/delete/{news_id}', 'api\NoticiaController@delete');
+Route::get('api/news/me', 'api\NoticiaController@index');
+Route::get('api/news/type/{type_id}', 'api\NoticiaController@type');
+
+//Rotas class API TipoNoticias
+Route::post('api/type/create', 'JornalistaController@registrar');
+Route::put('api/type/update/{type_id}', 'JornalistaController@update');
+Route::delete('api/type/delete/{type_id}', 'JornalistaController@delete');
+Route::get('api/type/me', 'JornalistaController@show');

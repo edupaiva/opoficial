@@ -8,7 +8,7 @@
  <h1>Novo Usuário </h1>
  
  <form action="adiciona" method="POST">
-     
+     @csrf
      <input type="hidden" name="_token" value="{{csrf_token()}}" />
      <div class="form-group">
         Nome <input type="text" name="nome" class="form-control"></div>

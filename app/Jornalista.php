@@ -10,6 +10,6 @@ class Jornalista extends Model
     public $timestamps = false ;
     protected $fillable = array ( 'nome' , 'sobrenome' , 'email' , 'senha' );
 
-    protected $guarded = ['id'];
+    //protected $guarded = ['id'];
     
 }
