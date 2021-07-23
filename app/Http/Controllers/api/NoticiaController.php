@@ -17,7 +17,7 @@ class NoticiaController extends Controller
     }
 
     public function index(){ 
-        $noticia = $this->noticia->all(); 
+        $noticia = $this->noticia->paginate(10); 
         return response()->json($noticia);
     }
 
@@ -25,6 +25,13 @@ class NoticiaController extends Controller
         $noticia = $this->noticia->find($id); 
         return response()->json($noticia);
     }
+
+    public function own($id){ 
+        $noticia = $this->noticia->orderBy('id', 'DESC')->where('jornalista_id', $id)->get(); 
+        return response()->json($noticia);
+    }
+
+
 
     public function save(Request $request) {
         $dados = $request->all();

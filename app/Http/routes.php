@@ -52,6 +52,8 @@ Route::put('api/news/update/{news_id}', 'api\NoticiaController@update');
 Route::delete('api/news/delete/{news_id}', 'api\NoticiaController@delete');
 Route::get('api/news/me', 'api\NoticiaController@index');
 Route::get('api/news/type/{type_id}', 'api\NoticiaController@type');
+Route::get('api/news/own/{id}', 'api\NoticiaController@own');
+
 
 //Rotas class API TipoNoticias
 Route::post('api/type/create', 'JornalistaController@registrar');
